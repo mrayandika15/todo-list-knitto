@@ -1,0 +1,7 @@
+.container{
+    @apply w-full h-full flex gap-5  text-2xl flex-col;
+}
+
+.content{
+    @apply w-full h-full flex gap-2 items-center ;
+}
