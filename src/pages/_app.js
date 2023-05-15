@@ -1,5 +1,13 @@
-import '@/styles/globals.css'
+import { wrapper } from "@/store";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import "@/styles/globals.css";
+import React from "react";
+
+class App extends React.Component {
+  render() {
+    const { Component, pageProps } = this.props;
+    return <Component {...pageProps} />;
+  }
 }
+
+export default wrapper.withRedux(App);
