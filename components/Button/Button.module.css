@@ -1,0 +1,15 @@
+.base {
+  @apply w-fit h-fit px-4 py-2 text-sm transition-all rounded-lg m-0;
+}
+
+.colored {
+  @apply bg-blue-600 hover:bg-blue-800 font-semibold text-white;
+}
+
+.outline {
+  @apply border-blue-600 bg-transparent text-blue-600 font-semibold hover:bg-blue-800 hover:text-white;
+}
+
+.unstyled {
+  @apply border-none bg-transparent hover:bg-slate-400;
+}

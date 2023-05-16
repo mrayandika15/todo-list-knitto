@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { wrapper } from "@/store";
 import { getAllTodos, getRunningQueriesThunk } from "@/services/todosApi";
 import { ITodo } from "@/types";
+import { Divider, Header } from "@/components";
+import { CreateTodos } from "@/features";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,12 +13,12 @@ type IProps = {
 };
 
 export default function Home({ data }: IProps) {
-  console.log(data);
-
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    ></main>
+    <main className={`flex flex-col p-16 gap-3 ${inter.className}`}>
+      <Header />
+      <CreateTodos />
+      <Divider />
+    </main>
   );
 }
 

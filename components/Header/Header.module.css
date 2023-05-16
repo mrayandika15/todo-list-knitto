@@ -1,0 +1,11 @@
+.container {
+  @apply flex gap-6 w-full h-auto;
+}
+
+.text {
+  @apply text-2xl font-semibold;
+}
+
+.icon {
+  @apply text-3xl;
+}
