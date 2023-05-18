@@ -6,12 +6,12 @@ import { ITodo } from "@/types";
 import { Divider, Header } from "@/components";
 import { CreateTodos, ListTodos } from "@/features";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 type IProps = {
   data: ITodo[];
-  currentPage: number;
 };
 
 export default function IsrStrategy({ data }: IProps) {

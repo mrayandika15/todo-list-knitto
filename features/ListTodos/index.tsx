@@ -22,11 +22,11 @@ const ListTodos: React.FC<IListTodos> = ({ data, fetchStrategy }) => {
     setCurrentPage(pageNumber);
 
     if (fetchStrategy === "isr") {
-      router.push(`/isr-strategy/${pageNumber}`);
+      router.push(`/isr-strategy/${(pageNumber - 1) * 10}`);
     }
 
     if (fetchStrategy === "ssr") {
-      router.push(`/ssr-strategy?page=${pageNumber}`);
+      router.push(`/ssr-strategy?page=${(pageNumber - 1) * 10}`);
     }
   };
 
@@ -42,8 +42,8 @@ const ListTodos: React.FC<IListTodos> = ({ data, fetchStrategy }) => {
           </tr>
         </thead>
         <tbody>
-          {data?.map((item) => (
-            <tr>
+          {data?.map((item, index) => (
+            <tr key={index}>
               <td className={style.table__column}>{item.userId}</td>
               <td className={style.table__column}>{item.id}</td>
               <td className={style.table__column}>{item.title}</td>

@@ -14,8 +14,6 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  console.log(Array.from({ length: totalPages }, (_, i) => i + 1));
-
   return (
     <div className={style.container}>
       <nav>

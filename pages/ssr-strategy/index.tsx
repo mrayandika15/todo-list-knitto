@@ -31,7 +31,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     async ({ query }) => {
       const page: number = Number(query?.page) | 1;
 
-      const result = await store.dispatch(getSortTodos.initiate(page));
+      const result = await store.dispatch(getSortTodos.initiate(page - 1));
 
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
 

@@ -10,7 +10,7 @@ export const getStaticProps = wrapper.getStaticProps(
     async ({ params }) => {
       const page: number = Number(params?.pages) | 1;
 
-      const result = await store.dispatch(getSortTodos.initiate(page));
+      const result = await store.dispatch(getSortTodos.initiate(page - 1));
 
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
@@ -25,7 +25,9 @@ export const getStaticProps = wrapper.getStaticProps(
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: Array.from({ length: 10 }).map((_, i) => `/isr-strategy/${i + 2}`),
+    paths: Array.from({ length: 200 / 10 }).map(
+      (_, i) => `/isr-strategy/${i + 1}`
+    ),
     fallback: "blocking",
   };
 };
