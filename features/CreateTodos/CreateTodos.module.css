@@ -1,3 +1,23 @@
 .container {
   @apply flex justify-end w-full h-auto;
 }
+
+.form__container {
+  @apply flex flex-col gap-10;
+}
+
+.form__header__container {
+  @apply flex justify-between items-center;
+}
+
+.form__header {
+  @apply text-xl font-semibold;
+}
+
+.form__close__icon {
+  @apply text-lg cursor-pointer;
+}
+
+.form__action__buttons {
+  @apply flex gap-3;
+}

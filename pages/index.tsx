@@ -4,7 +4,7 @@ import { wrapper } from "@/store";
 import { getAllTodos, getRunningQueriesThunk } from "@/services/todosApi";
 import { ITodo } from "@/types";
 import { Divider, Header } from "@/components";
-import { CreateTodos } from "@/features";
+import { CreateTodos, ListTodos } from "@/features";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +18,8 @@ export default function Home({ data }: IProps) {
       <Header />
       <CreateTodos />
       <Divider />
+
+      <ListTodos data={data} />
     </main>
   );
 }

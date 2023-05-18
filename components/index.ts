@@ -6,4 +6,6 @@ import Button from "./Button";
 
 import Drawer from "./Drawer";
 
-export { Divider, Header, Button, Drawer };
+import Input from "./Input";
+
+export { Divider, Header, Button, Drawer, Input };

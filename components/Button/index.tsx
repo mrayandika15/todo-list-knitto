@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Button.module.css";
 import { IButton } from "./Button.type";
-const Button: React.FC<IButton> = ({ variant, children }) => {
+const Button: React.FC<IButton> = ({ variant, children, onClick }) => {
   const className = [style.base];
 
   if (variant === "colored") {
@@ -16,6 +16,14 @@ const Button: React.FC<IButton> = ({ variant, children }) => {
     className.push(style.unstyled);
   }
 
-  return <button className={className.join(" ")}>{children}</button>;
+  if (variant === "danger") {
+    className.push(style.danger);
+  }
+
+  return (
+    <button className={className.join(" ")} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 export default Button;

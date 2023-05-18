@@ -1,0 +1,11 @@
+.container {
+  @apply flex flex-col gap-2 p-2;
+}
+
+.label {
+  @apply text-sm font-semibold;
+}
+
+.input {
+  @apply border border-gray-300 rounded-sm p-2;
+}

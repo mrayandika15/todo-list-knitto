@@ -1,0 +1,15 @@
+.container {
+  @apply flex items-center justify-center mt-8;
+}
+
+.content {
+  @apply flex space-x-2;
+}
+
+.pagination__button__active {
+  @apply px-4 py-2 rounded-full bg-white text-black;
+}
+
+.pagination__button__disabled {
+  @apply bg-transparent text-white border-gray-500 px-4 py-2 border rounded-full;
+}
