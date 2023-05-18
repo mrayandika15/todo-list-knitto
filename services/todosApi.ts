@@ -7,8 +7,18 @@ export const todoApi = baseApi.injectEndpoints({
       query: () => "todos",
     }),
 
-    getSortTodos: builder.query<ITodo[], void>({
+    getSortTodos: builder.query<ITodo[], void | number>({
       query: (pages) => `todos?_start=${pages}&_limit=10`,
+      providesTags: ["Todos"],
+    }),
+
+    createTodos: builder.mutation<ITodo, Partial<ITodo>>({
+      query: ({ ...body }) => ({
+        url: `todos`,
+        method: "POST",
+        body: body,
+      }),
+      invalidatesTags: ["Todos"],
     }),
   }),
 });
@@ -17,6 +27,7 @@ export const todoApi = baseApi.injectEndpoints({
 export const {
   useGetAllTodosQuery,
   useGetSortTodosQuery,
+  useCreateTodosMutation,
   util: { getRunningQueriesThunk },
 } = todoApi;
 

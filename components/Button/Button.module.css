@@ -17,3 +17,8 @@
 .danger {
   @apply bg-red-600 hover:bg-red-800 font-semibold text-white;
 }
+
+.spinner {
+  @apply w-5 h-5  rounded-full animate-spin
+  border-2 border-solid border-white border-t-transparent;
+}

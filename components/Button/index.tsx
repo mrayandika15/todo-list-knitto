@@ -1,7 +1,12 @@
 import React from "react";
 import style from "./Button.module.css";
 import { IButton } from "./Button.type";
-const Button: React.FC<IButton> = ({ variant, children, onClick }) => {
+const Button: React.FC<IButton> = ({
+  variant,
+  children,
+  onClick,
+  isLoading,
+}) => {
   const className = [style.base];
 
   if (variant === "colored") {
@@ -22,7 +27,7 @@ const Button: React.FC<IButton> = ({ variant, children, onClick }) => {
 
   return (
     <button className={className.join(" ")} onClick={onClick}>
-      {children}
+      {isLoading ? <div className={style.spinner} /> : children}
     </button>
   );
 };

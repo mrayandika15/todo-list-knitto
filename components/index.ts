@@ -8,4 +8,6 @@ import Drawer from "./Drawer";
 
 import Input from "./Input";
 
-export { Divider, Header, Button, Drawer, Input };
+import Notification from "./Notification";
+
+export { Divider, Header, Button, Drawer, Input, Notification };
