@@ -4,18 +4,30 @@ import style from "./ListTodos.module.css";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { ITodo } from "@/types";
 import Pagination from "./Pagination";
+import { useRouter } from "next/router";
 
 type IListTodos = {
   data: ITodo[];
+  fetchStrategy: "isr" | "ssr";
 };
 
-const ListTodos: React.FC<IListTodos> = ({ data }) => {
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const totalPages = 5;
+const ListTodos: React.FC<IListTodos> = ({ data, fetchStrategy }) => {
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+
+  const router = useRouter();
+
+  const totalPages = 200 / 10;
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    // Perform any additional logic or API calls based on the selected page number
+
+    if (fetchStrategy === "isr") {
+      router.push(`/isr-strategy/${pageNumber}`);
+    }
+
+    if (fetchStrategy === "ssr") {
+      router.push(`/ssr-strategy?page=${pageNumber}`);
+    }
   };
 
   return (

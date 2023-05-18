@@ -1,5 +1,5 @@
 .base {
-  @apply w-fit h-fit px-4 py-2 text-sm transition-all rounded-md m-0;
+  @apply w-fit h-fit px-4 py-2 text-sm transition-all rounded-md m-0 flex gap-3 items-center;
 }
 
 .colored {

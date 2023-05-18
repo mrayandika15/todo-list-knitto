@@ -4,7 +4,11 @@ import { baseApi } from "./baseApi";
 export const todoApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAllTodos: builder.query<ITodo[], void>({
-      query: () => "todos?_start=0&_limit=10",
+      query: () => "todos",
+    }),
+
+    getSortTodos: builder.query<ITodo[], void>({
+      query: (pages) => `todos?_start=${pages}&_limit=10`,
     }),
   }),
 });
@@ -12,9 +16,9 @@ export const todoApi = baseApi.injectEndpoints({
 // export for CSR integration
 export const {
   useGetAllTodosQuery,
+  useGetSortTodosQuery,
   util: { getRunningQueriesThunk },
 } = todoApi;
 
 // export for ISR integration
-
-export const { getAllTodos } = todoApi.endpoints;
+export const { getAllTodos, getSortTodos } = todoApi.endpoints;
